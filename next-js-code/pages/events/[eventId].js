@@ -4,7 +4,7 @@ import EventSummary from "@/components/event-details/event-summary";
 import EventLogistics from "@/components/event-details/event-logistics";
 import EventContent from "@/components/event-details/event-content";
 import ErrorAlert from "@/components/events/error-alert";
-
+import Head from "next/head";
 
 function EventDetailPage(props) {
     const event = props.selectedEvent; 
@@ -19,6 +19,10 @@ function EventDetailPage(props) {
     }
     return (
         <Fragment>
+            <Head>
+                <title>{event.title}</title>
+                <meta name="description" content={event.description} />
+            </Head>
             <EventSummary title={event.title} />
             <EventLogistics date={event.date} address={event.location} image={event.image} imageAlt={event.title} />
             <EventContent>
