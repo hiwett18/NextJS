@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import { getFeaturedEvents } from "@/helpers/api-util";
 import EventList from "@/components/events/event-list";
+import NewsletterRegistration from '@/components/input/newsletter-registration';
 
 function HomePage(prpos) {
   return (
@@ -10,6 +11,7 @@ function HomePage(prpos) {
         <title>NextJS Events</title>
         <meta name="description" content="Find a lot of great events that allows you to connect..." />
       </Head>
+      <NewsletterRegistration />
       <EventList items={prpos.events} />
       
     </div>
